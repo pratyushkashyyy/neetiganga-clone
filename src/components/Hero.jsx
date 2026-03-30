@@ -25,13 +25,19 @@ const Hero = () => {
         <div className="hero-grid">
           <div className="hero-content">
             <Reveal delay={0.2}>
-              <span className="hero-eyebrow">NEETI GANGA LEGAL ASSOCIATES</span>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', marginBottom: '1rem' }}>
+                <span className="hero-eyebrow" style={{ marginBottom: 0 }}>NEETI GANGA LEGAL ASSOCIATES</span>
+                <div className="iso-badge">
+                  <span className="iso-icon">ISO</span>
+                  <span className="iso-text">9001:2015<br/>Certified</span>
+                </div>
+              </div>
             </Reveal>
             
             <Reveal delay={0.4} duration={1.2}>
               <h1 className="hero-title">
-                The Ultimate <span className="gold">Legal Partners</span><br/>
-                for Justice <span className="gold">& Integrity</span>
+                Trusted Legal Counsel.<br/>
+                <span className="gold">Strategic. Principled. Relentless.</span>
               </h1>
             </Reveal>
 
@@ -41,8 +47,8 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1, duration: 0.8 }}
             >
-              Providing ethical, dependable, and effective legal solutions tailored 
-              to protect your rights and interests at every step of your legal journey.
+              <strong>Neeti Ganga Legal Associates</strong> — Practising across Civil, Criminal, Corporate, 
+              and Specialised Law from offices in Pune, Delhi, and Patna.
             </motion.p>
             
             <div className="hero-actions">

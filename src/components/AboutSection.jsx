@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ShieldCheck, Users, Hammer, Briefcase, Shield, Scale, ChevronRight } from 'lucide-react';
 import { Reveal, Magnetic } from './MotionUtils';
@@ -42,9 +43,9 @@ const AboutSection = () => {
               viewport={{ once: true }}
               transition={{ delay: 0.4, duration: 0.8 }}
             >
-              Founded on the objective of delivering dependable legal representation across 
-              all areas of law, Neeti Ganga Legal Associates maintains an uncompromising 
-              approach towards customer satisfaction.
+              Neeti Ganga Legal Associates is a full-service law firm committed to delivering strategic, principled, and results-driven legal representation. With offices in Pune, Delhi, and Patna, we serve individuals, businesses, and startups across a comprehensive spectrum of legal disciplines — from civil and criminal litigation to corporate advisory and beyond.
+              <br/><br/>
+              We are more than lawyers. We are your strategic partners, your advocates, and your guides through the complexities of the legal system. Justice, for us, is not an ideal — it is the outcome we work toward every single day.
             </motion.p>
             
             <div className="about-simple-list">
@@ -109,9 +110,9 @@ const AboutSection = () => {
             >
               <p>With over two decades of experience, our team has successfully navigated complex legal challenges across diverse practice areas — from high-stakes litigation and corporate advisory to family disputes and property matters.</p>
               <Magnetic strength={0.2}>
-                <a href="#contact" className="btn btn-primary cta-gold">
+                <Link to="/contact" className="btn btn-primary cta-gold">
                   <span>SCHEDULE A CONSULTATION</span> <ChevronRight size={16} />
-                </a>
+                </Link>
               </Magnetic>
             </motion.div>
           </div>

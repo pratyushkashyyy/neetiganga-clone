@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { Magnetic } from './MotionUtils';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,24 +16,30 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Close mobile menu on route change
+  useEffect(() => {
+    setIsOpen(false);
+  }, [location.pathname]);
+
   return (
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
-      <div className="container">
-        <a href="#home" className="logo">
+      <div className="container" style={{ gap: '2rem' }}>
+        <Link to="/" className="logo">
           <img src="https://neetiganga.com/logo.png" alt="Neeti Ganga Logo" />
-        </a>
+        </Link>
 
         {/* Desktop Nav */}
         <div className="nav-right desktop-only">
-          <ul className="nav-links">
-            <li><Magnetic strength={0.1}><a href="#about">About</a></Magnetic></li>
-            <li><Magnetic strength={0.1}><a href="#services">Services</a></Magnetic></li>
-            <li><Magnetic strength={0.1}><a href="#team">Team</a></Magnetic></li>
-            <li><Magnetic strength={0.1}><a href="#contact">Contact</a></Magnetic></li>
+          <ul className="nav-links" style={{ gap: '1.5rem' }}>
+            <li><Magnetic strength={0.1}><Link to="/about">About Us</Link></Magnetic></li>
+            <li><Magnetic strength={0.1}><Link to="/practice-areas">Practice Areas</Link></Magnetic></li>
+            <li><Magnetic strength={0.1}><Link to="/who-we-serve">Who We Serve</Link></Magnetic></li>
+            <li><Magnetic strength={0.1}><Link to="/media">Media</Link></Magnetic></li>
+            <li><Magnetic strength={0.1}><Link to="/principles">Principles</Link></Magnetic></li>
           </ul>
-          <div className="nav-cta-wrapper">
+          <div className="nav-cta-wrapper" style={{ marginLeft: '1rem' }}>
              <Magnetic strength={0.25}>
-               <a href="#contact" className="btn btn-primary nav-cta">CONTACT</a>
+               <Link to="/contact" className="btn btn-primary nav-cta">CONTACT</Link>
              </Magnetic>
           </div>
         </div>
@@ -44,10 +52,13 @@ const Navbar = () => {
         {/* Mobile Nav */}
         {isOpen && (
           <ul className="nav-links mobile-nav-active">
-            <li><a href="#about" onClick={() => setIsOpen(false)}>About</a></li>
-            <li><a href="#services" onClick={() => setIsOpen(false)}>Services</a></li>
-            <li><a href="#team" onClick={() => setIsOpen(false)}>Team</a></li>
-            <li><a href="#contact" className="btn btn-primary" onClick={() => setIsOpen(false)}>Contact</a></li>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/about">About Us</Link></li>
+            <li><Link to="/practice-areas">Practice Areas</Link></li>
+            <li><Link to="/who-we-serve">Who We Serve</Link></li>
+            <li><Link to="/media">Media</Link></li>
+            <li><Link to="/principles">Principles</Link></li>
+            <li><Link to="/contact" className="btn btn-primary">Contact</Link></li>
           </ul>
         )}
       </div>

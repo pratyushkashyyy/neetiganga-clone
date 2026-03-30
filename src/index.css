@@ -137,6 +137,30 @@ section { padding: 2.5rem 0; }
 .hero-description { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 2rem; max-width: 580px; line-height: 1.7; }
 .hero-actions { display: flex; gap: 1.5rem; margin-bottom: 3rem; }
 
+.iso-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 0.8rem;
+    border: 1px solid rgba(197, 160, 89, 0.3);
+    border-radius: 4px;
+    background: rgba(197, 160, 89, 0.05);
+}
+.iso-icon {
+    font-weight: 800;
+    color: var(--primary);
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+}
+.iso-text {
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    line-height: 1.2;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+
 .hero-stats-bottom { display: flex; gap: 2rem; padding-top: 2rem; border-top: 1px solid var(--border); }
 .hero-stat-item { flex: 1; }
 .hero-stat-value { font-size: 2.2rem; color: var(--primary); font-weight: 600; display: block; margin-bottom: 0.2rem; }
@@ -314,4 +338,96 @@ section { padding: 2.5rem 0; }
     .nav-right { display: none; }
     .hero { padding: 10rem 0 6rem; }
     .about-split-grid { gap: 4rem; }
+}
+
+/* Global Legal UI Components */
+
+/* BCI Disclaimer Modal */
+.bci-modal-overlay {
+    position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+    background: rgba(11, 13, 38, 0.85);
+    backdrop-filter: blur(10px);
+    z-index: 10000;
+    display: flex; justify-content: center; align-items: center;
+    padding: 1rem;
+}
+.bci-modal {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 3rem;
+    max-width: 700px;
+    width: 100%;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.5), 0 0 40px rgba(197, 160, 89, 0.05);
+}
+.bci-header { text-align: center; margin-bottom: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 2rem; }
+.bci-content { color: var(--text-muted); line-height: 1.8; font-size: 0.95rem; display: flex; flex-direction: column; gap: 1.5rem; margin-bottom: 2.5rem; }
+.bci-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+@media(max-width: 600px) {
+    .bci-actions { grid-template-columns: 1fr; }
+    .bci-modal { padding: 2rem; }
+}
+
+/* Cookie Consent Banner */
+.cookie-banner {
+    position: fixed; bottom: 2rem; left: 2rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    max-width: 450px;
+    z-index: 9998;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+.cookie-actions { display: flex; gap: 1rem; margin-top: 1.5rem; }
+.cookie-btn {
+    padding: 0.6rem 1rem; border-radius: 4px; font-weight: 600; font-size: 0.85rem;
+    cursor: pointer; transition: 0.3s; flex: 1; border: none;
+}
+.cookie-btn-outline { background: transparent; border: 1px solid var(--border); color: var(--text); }
+.cookie-btn-outline:hover { background: rgba(255,255,255,0.05); }
+.cookie-btn-primary { background: var(--primary); color: #000; }
+.cookie-btn-primary:hover { background: var(--primary-hover); transform: translateY(-2px); }
+@media(max-width: 600px) {
+    .cookie-banner { bottom: 0; left: 0; right: 0; max-width: 100%; border-radius: 12px 12px 0 0; }
+}
+
+/* Floating Call Button */
+.floating-call-container {
+    position: fixed; bottom: 2rem; right: 2rem; z-index: 9997;
+    display: flex; align-items: center; justify-content: flex-end;
+}
+.floating-call-btn {
+    width: 60px; height: 60px;
+    background: var(--primary);
+    border-radius: 50%;
+    display: flex; justify-content: center; align-items: center;
+    box-shadow: 0 10px 25px rgba(197, 160, 89, 0.4);
+    transition: 0.3s;
+    position: relative;
+    z-index: 2;
+}
+.floating-call-btn:hover { background: var(--primary-hover); transform: scale(1.05); }
+.floating-call-tooltip {
+    position: absolute; right: 80px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    color: #FFF;
+    font-weight: 600;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    opacity: 0; pointer-events: none;
+    transform: translateX(10px);
+    transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+}
+.floating-call-tooltip span { display: block; font-size: 0.7rem; color: var(--text-muted); font-weight: 400; margin-top: 0.3rem; }
+.floating-call-container:hover .floating-call-tooltip { opacity: 1; transform: translateX(0); }
+@media(max-width: 600px) {
+    .floating-call-container { bottom: 0; right: 0; width: 100%; }
+    .floating-call-btn { width: 100%; border-radius: 0; height: 60px; gap: 10px; }
+    .floating-call-btn::after { content: "Call Us — Available 24/7"; font-weight: 600; color: #000; font-size: 1rem; }
+    .floating-call-tooltip { display: none; }
 }
