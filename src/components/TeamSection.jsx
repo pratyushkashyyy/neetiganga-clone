@@ -4,11 +4,26 @@ import { User } from 'lucide-react';
 
 const TeamSection = () => {
   const team = [
-    { name: "Advocate Ritu Singh", role: "" },
-    { name: "Advocate Raj Singh", role: "" },
-    { name: "Advocate Avinash Sadaphule", role: "" },
-    { name: "Paralegal Shivansh Singh", role: "" },
-    { name: "Paralegal Shantanu", role: "" }
+    {
+      name: "Advocate Ritu Singh",
+      description: "Handles civil and family litigation with a strong focus on strategy, documentation, and courtroom advocacy."
+    },
+    {
+      name: "Advocate Raj Singh",
+      description: "Leads criminal and trial-side matters, including bail, anticipatory bail, and appellate representation."
+    },
+    {
+      name: "Advocate Avinash Sadaphule",
+      description: "Advises on corporate and commercial disputes, contract risk, and business-side legal structuring."
+    },
+    {
+      name: "Paralegal Shivansh Singh",
+      description: "Supports filings, case tracking, and evidence coordination across high-volume litigation matters."
+    },
+    {
+      name: "Paralegal Shantanu",
+      description: "Manages legal research, document review, and drafting support for day-to-day case preparation."
+    }
   ];
 
   return (
@@ -46,7 +61,7 @@ const TeamSection = () => {
                 <User size={28} className="muted-icon" />
               </div>
               <h3>{member.name}</h3>
-              <p className="gold" style={{ fontSize: '0.75rem', letterSpacing: '0.2em', fontWeight: 600 }}>{member.role}</p>
+              <p className="team-member-description">{member.description}</p>
             </motion.div>
           ))}
         </div>

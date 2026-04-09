@@ -5,8 +5,6 @@ import { Phone, Mail, Clock, Globe } from 'lucide-react';
 import { CONTACT_EMAIL, OFFICES, getTelHref } from '../data/offices';
 
 const Footer = () => {
-  const primaryOffice = OFFICES[0];
-
   return (
     <footer style={{ background: '#07091B', paddingTop: '6rem', paddingBottom: '2rem', borderTop: '1px solid rgba(197, 160, 89, 0.15)' }}>
       <div className="container">
@@ -51,8 +49,8 @@ const Footer = () => {
               </div>
             </div>
 
-            <a href={getTelHref(primaryOffice.phone)} className="footer-contact-link">
-              <Phone size={16} /> {primaryOffice.phone}
+            <a href={getTelHref(OFFICES[0].phone)} className="footer-contact-link">
+              <Phone size={16} /> {OFFICES[0].phone}
             </a>
             <a href={`mailto:${CONTACT_EMAIL}`} className="footer-contact-link">
               <Mail size={16} /> {CONTACT_EMAIL}

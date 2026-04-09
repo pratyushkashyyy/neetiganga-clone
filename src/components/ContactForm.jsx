@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin } from 'lucide-react';
-import { CONTACT_EMAIL, OFFICES } from '../data/offices';
+import { CONTACT_EMAIL, OFFICES, getTelHref } from '../data/offices';
 
 const ContactForm = () => {
   const [formState, setFormState] = useState({ name: '', email: '', message: '' });
   const [status, setStatus] = useState('idle');
-  const phoneList = OFFICES.map((office) => office.phone).join('\n');
-  const officeList = OFFICES.map((office) => `${office.city}: ${office.address}`).join('\n');
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -33,25 +31,53 @@ const ContactForm = () => {
             <p className="eyebrow">CONTACT US</p>
             <h2 className="section-title-small">Let's Discuss Your <span className="gold">Legal Needs</span></h2>
             <ul className="info-list-refined">
-              {[
-                { icon: <Mail size={18} />, label: "EMAIL ADDRESS", value: CONTACT_EMAIL },
-                { icon: <Phone size={18} />, label: "PHONE NUMBER", value: phoneList },
-                { icon: <MapPin size={18} />, label: "OFFICE LOCATION", value: officeList }
-              ].map((item, i) => (
-                <motion.li 
-                  key={i}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.15 }}
-                >
-                  <div className="info-icon-box">{item.icon}</div>
-                  <div>
-                    <span className="info-label">{item.label}</span>
-                    <p style={{ whiteSpace: 'pre-line' }}>{item.value}</p>
+              <motion.li
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0 }}
+              >
+                <div className="info-icon-box"><Mail size={18} /></div>
+                <div>
+                  <span className="info-label">EMAIL ADDRESS</span>
+                  <p>{CONTACT_EMAIL}</p>
+                </div>
+              </motion.li>
+
+              <motion.li
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.15 }}
+              >
+                <div className="info-icon-box"><MapPin size={18} /></div>
+                <div>
+                  <span className="info-label">OFFICE CONTACTS</span>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                    {OFFICES.map((office) => (
+                      <div key={office.id} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)', paddingBottom: '0.9rem' }}>
+                        <p style={{ margin: 0, color: '#FFF', fontWeight: 600 }}>{office.city}</p>
+                        <p style={{ margin: '0.25rem 0 0', color: 'var(--text-muted)', lineHeight: 1.5, fontSize: '0.95rem' }}>{office.address}</p>
+                        <a
+                          href={getTelHref(office.phone)}
+                          style={{
+                            marginTop: '0.35rem',
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            gap: '0.45rem',
+                            textDecoration: 'none',
+                            color: 'var(--primary)',
+                            fontWeight: 600
+                          }}
+                        >
+                          <Phone size={14} />
+                          {office.phone}
+                        </a>
+                      </div>
+                    ))}
                   </div>
-                </motion.li>
-              ))}
+                </div>
+              </motion.li>
             </ul>
           </motion.div>
 
