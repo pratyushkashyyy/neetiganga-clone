@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Preloader from './components/Preloader';
@@ -14,7 +14,10 @@ import Home from './pages/Home';
 import AboutUs from './pages/AboutUs';
 import Services from './pages/Services';
 import WhoWeServe from './pages/WhoWeServe';
-import Media from './pages/Media';
+import Newsletter from './pages/Newsletter';
+import Publications from './pages/Publications';
+import ArticleDetail from './pages/ArticleDetail';
+import Admin from './pages/Admin';
 import Principles from './pages/Principles';
 import ContactPage from './pages/ContactPage';
 import Privacy from './pages/Privacy';
@@ -36,7 +39,11 @@ function App() {
             <Route path="/about" element={<AboutUs />} />
             <Route path="/practice-areas" element={<Services />} />
             <Route path="/who-we-serve" element={<WhoWeServe />} />
-            <Route path="/media" element={<Media />} />
+            <Route path="/media" element={<Navigate to="/publications" replace />} />
+            <Route path="/newsletter" element={<Newsletter />} />
+            <Route path="/publications" element={<Publications />} />
+            <Route path="/publications/:articleId" element={<ArticleDetail />} />
+            <Route path="/admin" element={<Admin />} />
             <Route path="/principles" element={<Principles />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/privacy-policy" element={<Privacy />} />

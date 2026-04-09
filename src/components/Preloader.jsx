@@ -68,7 +68,7 @@ const Preloader = ({ onComplete }) => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
           >
-            <img src="https://neetiganga.com/logo.png" alt="Neeti Ganga Logo" className="preloader-logo" />
+            <img src="/logo.png" alt="Neeti Ganga Logo" className="preloader-logo" />
             <motion.p 
               className="preloader-tagline"
               initial={{ opacity: 0, y: 10 }}

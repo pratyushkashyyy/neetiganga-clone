@@ -23,10 +23,12 @@ const PhilosophySection = () => {
           
           <Reveal delay={0.4}>
             <p style={{ color: 'var(--text-muted)', fontSize: '1.15rem', lineHeight: '1.9', textAlign: 'center' }}>
-              At Neeti Ganga Legal Associates, our name is our mission. Just as the Ganga is a timeless, purifying force that carves its own path, we believe the law should be a relentless flow toward the truth. But a river without banks is a flood; it needs <strong style={{color: 'var(--text)'}}>Neeti</strong> — the ancient art of strategic wisdom — to guide its power.
+              At Neeti Ganga Legal Associates, our name is our mission. Just as the mighty river
+Ganga is a timeless, purifying force that carves its own, we believe that our action
+should be a relentless flow towards the satisfaction of our Clients. But a river without banks is a flood; it needs <strong style={{color: 'var(--text)'}}>Neeti</strong> — the ancient art of strategic wisdom — to guide its power.
             </p>
           </Reveal>
-
+{/* 
           <Reveal delay={0.5}>
             <blockquote style={{ 
               fontFamily: '"Playfair Display", serif', 
@@ -40,11 +42,11 @@ const PhilosophySection = () => {
             }}>
               "Justice is not a destination, but a constant flow."
             </blockquote>
-          </Reveal>
+          </Reveal> */}
 
           <Reveal delay={0.6}>
             <p style={{ color: 'var(--text-muted)', fontSize: '1.15rem', lineHeight: '1.9', textAlign: 'center' }}>
-              We operate on the principle that to remove the debris of legal complexity so that the path to a solution becomes clear.
+              We operate on the principle of removing the debris of legal complexity so that the path to a solution becomes clear.
             </p>
           </Reveal>
         </div>

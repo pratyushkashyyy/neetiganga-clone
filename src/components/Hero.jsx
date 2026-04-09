@@ -6,8 +6,8 @@ import { Reveal, Magnetic } from './MotionUtils';
 const Hero = () => {
   const stats = [
     { value: "10+", label: "PRACTICE AREAS" },
-    { value: "20+", label: "YEARS EXPERIENCE" },
-    { value: "1000+", label: "CASES RESOLVED" }
+    { value: "7+", label: "YEARS EXPERIENCE" },
+    { value: "500+", label: "CASES RESOLVED" }
   ];
 
   const targetRef = useRef(null);
@@ -25,13 +25,7 @@ const Hero = () => {
         <div className="hero-grid">
           <div className="hero-content">
             <Reveal delay={0.2}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', marginBottom: '1rem' }}>
-                <span className="hero-eyebrow" style={{ marginBottom: 0 }}>NEETI GANGA LEGAL ASSOCIATES</span>
-                <div className="iso-badge">
-                  <span className="iso-icon">ISO</span>
-                  <span className="iso-text">9001:2015<br/>Certified</span>
-                </div>
-              </div>
+              <span className="hero-eyebrow">NEETI GANGA LEGAL ASSOCIATES</span>
             </Reveal>
             
             <Reveal delay={0.4} duration={1.2}>
@@ -47,8 +41,8 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1, duration: 0.8 }}
             >
-              <strong>Neeti Ganga Legal Associates</strong> — Practising across Civil, Criminal, Corporate, 
-              and Specialised Law from offices in Pune, Delhi, and Patna.
+              <strong>Neeti Ganga Legal Associates</strong> — A full-service law firm operating in Pune, Delhi and
+Patna.
             </motion.p>
             
             <div className="hero-actions">
@@ -104,7 +98,7 @@ const Hero = () => {
                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
               >
                 <img 
-                  src="https://neetiganga.com/logo.png" 
+                  src="/logo.png" 
                   alt="Neeti Ganga Logo" 
                   className="hero-logo-scale"
                 />

@@ -3,31 +3,10 @@ import { motion } from 'framer-motion';
 import { Reveal } from '../components/MotionUtils';
 import ContactForm from '../components/ContactForm';
 import { Building } from 'lucide-react';
+import { CONTACT_EMAIL, OFFICES, getMapEmbedUrl, getTelHref } from '../data/offices';
 
 const ContactPage = () => {
-  const offices = [
-    {
-      city: 'New Delhi',
-      address: 'Chamber 14B, Delhi High Court Block, Sher Shah Road, New Delhi, 110003',
-      phone: '+91 11 2338 4321',
-      email: 'delhi@neetiganga.com',
-      mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d112061.09262725458!2d77.158221!3d28.6436846!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd2cfb14c335%3A0xe54930bd127161b5!2sDelhi%20High%20Court!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin'
-    },
-    {
-      city: 'Pune',
-      address: 'Level 4, Platinum Estate, Near Pune District Court, Shivaji Nagar, Pune, 411005',
-      phone: '+91 20 2553 9876',
-      email: 'pune@neetiganga.com',
-      mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.242319409395!2d73.84758!3d18.52697!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTjCsDMxJzM3LjEiTiA3M8KwNTAnNTEuMyJF!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin'
-    },
-    {
-      city: 'Patna',
-      address: 'Suite 201, Law Chambers, Near Patna High Court, Bailey Road, Patna, 800001',
-      phone: '+91 612 222 3456',
-      email: 'patna@neetiganga.com',
-      mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3597.689369941913!2d85.1276!!3d25.6083!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDM2JzI5LjkiTiA4NcKwMDcnMzkuNCJF!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin'
-    }
-  ];
+  const offices = OFFICES;
 
   return (
     <div className="page-container" style={{ paddingTop: '100px', minHeight: '100vh' }}>
@@ -59,7 +38,7 @@ const ContactPage = () => {
                   
                   <div style={{ width: '100%', height: '250px', background: 'rgba(255,255,255,0.05)' }}>
                     <iframe
-                      src={loc.mapUrl}
+                      src={getMapEmbedUrl(loc.address)}
                       width="100%"
                       height="100%"
                       style={{ border: 0, filter: 'invert(90%) hue-rotate(180deg) contrast(80%)' }}
@@ -81,10 +60,10 @@ const ContactPage = () => {
                         <strong>Address:</strong><br/>{loc.address}
                       </p>
                       <p style={{ margin: 0, color: 'var(--text-muted)', fontSize: '0.95rem' }}>
-                        <strong>Phone:</strong> <a href={`tel:${loc.phone.replace(/\s+/g, '')}`} style={{ color: 'var(--primary)', textDecoration: 'none' }}>{loc.phone}</a>
+                        <strong>Phone:</strong> <a href={getTelHref(loc.phone)} style={{ color: 'var(--primary)', textDecoration: 'none' }}>{loc.phone}</a>
                       </p>
                       <p style={{ margin: 0, color: 'var(--text-muted)', fontSize: '0.95rem' }}>
-                        <strong>Email:</strong> <a href={`mailto:${loc.email}`} style={{ color: 'var(--primary)', textDecoration: 'none' }}>{loc.email}</a>
+                        <strong>Email:</strong> <a href={`mailto:${CONTACT_EMAIL}`} style={{ color: 'var(--primary)', textDecoration: 'none' }}>{CONTACT_EMAIL}</a>
                       </p>
                     </div>
                   </div>

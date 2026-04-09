@@ -4,9 +4,11 @@ import { User } from 'lucide-react';
 
 const TeamSection = () => {
   const team = [
-    { name: "Ritu Singh", role: "ADVOCATE" },
-    { name: "Raj Singh", role: "ADVOCATE" },
-    { name: "Avinash Sadaphule", role: "ADVOCATE" }
+    { name: "Advocate Ritu Singh", role: "" },
+    { name: "Advocate Raj Singh", role: "" },
+    { name: "Advocate Avinash Sadaphule", role: "" },
+    { name: "Paralegal Shivansh Singh", role: "" },
+    { name: "Paralegal Shantanu", role: "" }
   ];
 
   return (
@@ -16,7 +18,7 @@ const TeamSection = () => {
           className="eyebrow centered"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "0px 0px 80px 0px" }}
         >
           MEET OUR TEAM
         </motion.p>
@@ -24,7 +26,7 @@ const TeamSection = () => {
           className="section-title-alt centered"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "0px 0px 80px 0px" }}
           transition={{ duration: 0.8 }}
         >
           Experienced <span className="gold">Counsel</span>
@@ -36,7 +38,7 @@ const TeamSection = () => {
               className="team-card-minimal"
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               whileInView={{ opacity: 1, scale: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "0px 0px 80px 0px" }}
               transition={{ delay: index * 0.15, duration: 0.6 }}
               whileHover={{ y: -5, borderColor: 'rgba(197, 160, 89, 0.4)' }}
             >

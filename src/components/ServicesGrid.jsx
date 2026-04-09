@@ -32,7 +32,7 @@ const ServicesGrid = () => {
           transition={{ duration: 1.5 }}
           viewport={{ once: true }}
         >
-          OUR EXPERTISE
+          Our Expertise
         </motion.p>
         <motion.h2 
           className="section-title-alt centered"
@@ -41,7 +41,7 @@ const ServicesGrid = () => {
           viewport={{ once: true }}
           transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
         >
-          Comprehensive <span className="gold">Legal Solutions</span>
+          Comprehensive <span className="gold">Legal Solutions in India</span>
         </motion.h2>
         
         <div className="services-grid-12">
@@ -51,7 +51,7 @@ const ServicesGrid = () => {
               className="premium-service-card"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-10% 0px" }}
+              viewport={{ once: true, margin: "0px 0px 100px 0px" }}
               transition={{ 
                 delay: (index % 4) * 0.15, 
                 duration: 0.8,

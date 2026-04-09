@@ -11,7 +11,7 @@ export const Reveal = ({ children, delay = 0, duration = 0.8 }) => {
       <motion.div
         initial={{ y: "100%" }}
         whileInView={{ y: 0 }}
-        viewport={{ once: true }}
+        viewport={{ once: true, margin: "0px 0px 50px 0px" }}
         transition={{ 
           delay, 
           duration, 

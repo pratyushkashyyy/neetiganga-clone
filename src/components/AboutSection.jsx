@@ -28,7 +28,7 @@ const AboutSection = () => {
               className="eyebrow"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "0px 0px 80px 0px" }}
               transition={{ delay: 0.1 }}
             >
               WHO WE ARE
@@ -40,7 +40,7 @@ const AboutSection = () => {
               className="about-main-desc"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "0px 0px 80px 0px" }}
               transition={{ delay: 0.4, duration: 0.8 }}
             >
               Neeti Ganga Legal Associates is a full-service law firm committed to delivering strategic, principled, and results-driven legal representation. With offices in Pune, Delhi, and Patna, we serve individuals, businesses, and startups across a comprehensive spectrum of legal disciplines — from civil and criminal litigation to corporate advisory and beyond.
@@ -55,7 +55,7 @@ const AboutSection = () => {
                   className="simple-list-item"
                   initial={{ opacity: 0, x: -30 }}
                   whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
+                  viewport={{ once: true, margin: "0px 0px 80px 0px" }}
                   transition={{ delay: i * 0.15, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
                 >
                   <div className="simple-icon gold">{item.icon}</div>
@@ -74,7 +74,7 @@ const AboutSection = () => {
               className="eyebrow"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "0px 0px 80px 0px" }}
               transition={{ delay: 0.1 }}
             >
               WHY CHOOSE US
@@ -90,7 +90,7 @@ const AboutSection = () => {
                   className="benefit-card"
                   initial={{ opacity: 0, scale: 0.9 }}
                   whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
+                  viewport={{ once: true, margin: "0px 0px 80px 0px" }}
                   transition={{ delay: i * 0.15, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
                   whileHover={{ y: -8, boxShadow: '0 20px 40px rgba(0,0,0,0.3)', borderColor: 'rgba(197, 160, 89, 0.3)' }}
                 >
@@ -105,7 +105,7 @@ const AboutSection = () => {
               className="about-bottom-cta-box"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "0px 0px 80px 0px" }}
               transition={{ delay: 0.5, duration: 0.6 }}
             >
               <p>With over two decades of experience, our team has successfully navigated complex legal challenges across diverse practice areas — from high-stakes litigation and corporate advisory to family disputes and property matters.</p>

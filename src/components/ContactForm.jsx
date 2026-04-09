@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin } from 'lucide-react';
+import { CONTACT_EMAIL, OFFICES } from '../data/offices';
 
 const ContactForm = () => {
   const [formState, setFormState] = useState({ name: '', email: '', message: '' });
   const [status, setStatus] = useState('idle');
+  const phoneList = OFFICES.map((office) => office.phone).join('\n');
+  const officeList = OFFICES.map((office) => `${office.city}: ${office.address}`).join('\n');
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -31,9 +34,9 @@ const ContactForm = () => {
             <h2 className="section-title-small">Let's Discuss Your <span className="gold">Legal Needs</span></h2>
             <ul className="info-list-refined">
               {[
-                { icon: <Mail size={18} />, label: "EMAIL ADDRESS", value: "neetiganga@hotmail.com" },
-                { icon: <Phone size={18} />, label: "PHONE NUMBER", value: "+91 82619 93747\n+91 84214 55111" },
-                { icon: <MapPin size={18} />, label: "OFFICE LOCATION", value: "Sai Shradha, Next to Jai Mangal Karyalay, Manjri Budruk, Pune, 412307" }
+                { icon: <Mail size={18} />, label: "EMAIL ADDRESS", value: CONTACT_EMAIL },
+                { icon: <Phone size={18} />, label: "PHONE NUMBER", value: phoneList },
+                { icon: <MapPin size={18} />, label: "OFFICE LOCATION", value: officeList }
               ].map((item, i) => (
                 <motion.li 
                   key={i}

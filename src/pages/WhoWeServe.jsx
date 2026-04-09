@@ -52,16 +52,13 @@ const WhoWeServe = () => {
             {demographics.map((demo, idx) => (
               <Reveal key={demo.title} delay={0.2 + (idx * 0.1)}>
                 <div 
-                  className="demographic-card"
+                  className={`demographic-card ${idx % 2 === 0 ? '' : 'reverse'}`}
                   style={{
-                    display: 'flex',
-                    gap: '3rem',
                     background: 'rgba(14, 16, 48, 0.4)',
                     border: '1px solid var(--border)',
                     borderRadius: '16px',
                     padding: '3rem',
                     alignItems: 'center',
-                    flexDirection: idx % 2 === 0 ? 'row' : 'row-reverse'
                   }}
                 >
                   <div style={{ flex: '0 0 100px', height: '100px', borderRadius: '50%', background: 'rgba(197, 160, 89, 0.05)', display: 'flex', justifyContent: 'center', alignItems: 'center', border: '1px solid rgba(197, 160, 89, 0.2)' }}>

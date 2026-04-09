@@ -1,0 +1,17 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "neetiganga",
+  "compatibility_date": "2026-04-09",
+  "pages_build_output_dir": "./dist",
+  "d1_databases": [
+    {
+      "binding": "CMS_DB",
+      "database_name": "neetiganga-cms",
+      "database_id": "7c0d7354-1caa-4871-ad57-c7e75cd0a472",
+      "preview_database_id": "7c0d7354-1caa-4871-ad57-c7e75cd0a472"
+    }
+  ],
+  "vars": {
+    "ADMIN_USERNAME": "admin"
+  }
+}

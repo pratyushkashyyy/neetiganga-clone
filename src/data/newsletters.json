@@ -1,0 +1,29 @@
+[
+  {
+    "id": "newsletter-1",
+    "title": "Q3 2023: Corporate Tax Restructuring Updates",
+    "issue": "Vol. 12, Issue 3",
+    "description": "A concise briefing on tax restructuring trends, compliance updates, and major advisory takeaways for businesses.",
+    "fileUrl": "#",
+    "status": "published",
+    "updatedAt": "2023-10-01T10:00:00.000Z"
+  },
+  {
+    "id": "newsletter-2",
+    "title": "Q2 2023: Supreme Court Rulings on Real Estate",
+    "issue": "Vol. 12, Issue 2",
+    "description": "A roundup of significant rulings affecting developers, investors, and disputes involving real estate projects.",
+    "fileUrl": "#",
+    "status": "published",
+    "updatedAt": "2023-07-01T10:00:00.000Z"
+  },
+  {
+    "id": "newsletter-3",
+    "title": "Q1 2023: The State of Indian Intellectual Property",
+    "issue": "Vol. 12, Issue 1",
+    "description": "Recent developments in enforcement, registration practice, and risk management across IP-heavy businesses.",
+    "fileUrl": "#",
+    "status": "published",
+    "updatedAt": "2023-04-01T10:00:00.000Z"
+  }
+]

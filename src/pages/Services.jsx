@@ -24,12 +24,12 @@ const Services = () => {
     criminal: [
       { title: 'White-Collar Crimes', desc: 'Defense against allegations of corporate fraud, money laundering, and economic offenses.' },
       { title: 'Cyber Crimes', desc: 'Navigating complex digital forensics, data breaches, and IT Act violations.' },
-      { title: 'Bail & Anticipatory Bail', desc: 'Urgent and strategic interventions for securing liberty across trial courts and High Courts.' },
-      { title: 'Trials & Appeals', desc: 'Rigorous criminal defense and appellate advocacy from District Courts to the Supreme Court.' }
+      { title: 'Bail & Anticipatory Bail', desc: 'Urgent and strategic interventions for securing liberty across trial courts and high courts.' },
+      { title: 'Trials & Appeals', desc: 'Rigorous criminal defense and appellate advocacy from district courts to the Supreme Court.' }
     ],
     corporate: [
       { title: 'Contracts & Agreements', desc: 'Drafting and negotiating complex commercial contracts, NDAs, and licensing agreements.' },
-      { title: 'Start-up Registration & Funding', desc: 'End-to-end legal structuring for startups, equity financing, and regulatory compliance.' },
+      { title: 'Startup Registration & Funding', desc: 'End-to-end legal structuring for startups, equity financing, and regulatory compliance.' },
       { title: 'Labour & Employment', desc: 'Advisory on workplace policies, employee disputes, and statutory labor compliances.' },
       { title: 'Mergers & Acquisitions', desc: 'Due diligence, transaction structuring, and execution of complex M&A deals.' },
       { title: 'Tax Advisory', desc: 'Strategic counsel on direct and indirect taxation, including GST compliance and litigation.' }

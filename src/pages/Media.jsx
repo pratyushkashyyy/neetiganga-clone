@@ -1,15 +1,14 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Reveal } from '../components/MotionUtils';
-import { BookOpen, Camera, FileText, ArrowUpRight } from 'lucide-react';
+import { BookOpen, FileText, ArrowUpRight } from 'lucide-react';
 
-const Media = () => {
-  const [activeTab, setActiveTab] = useState('articles');
+const Media = ({ initialTab = 'articles' }) => {
+  const [activeTab, setActiveTab] = useState(initialTab);
 
   const tabs = [
     { id: 'articles', label: 'Legal Articles', icon: <FileText size={18} /> },
-    { id: 'newsletters', label: 'Newsletters', icon: <BookOpen size={18} /> },
-    { id: 'gallery', label: 'Media Gallery', icon: <Camera size={18} /> }
+    { id: 'newsletters', label: 'Newsletters', icon: <BookOpen size={18} /> }
   ];
 
   const articles = [
@@ -25,7 +24,7 @@ const Media = () => {
     { title: 'Q1 2023: The State of Indian Intellectual Property', issue: 'Vol. 12, Issue 1' }
   ];
 
-  const galleryPlaceholders = [1, 2, 3, 4, 5, 6];
+  const pageTitle = activeTab === 'newsletters' ? 'Newsletters' : 'Publications';
 
   return (
     <div className="page-container" style={{ paddingTop: '100px', minHeight: '100vh' }}>
@@ -37,7 +36,7 @@ const Media = () => {
             <span className="eyebrow" style={{ justifyContent: 'center' }}>KNOWLEDGE & PUBLICATIONS</span>
           </Reveal>
           <Reveal delay={0.2}>
-            <h1 className="section-title-alt">Media <span className="gold">Center</span></h1>
+            <h1 className="section-title-alt">{pageTitle} <span className="gold">Center</span></h1>
           </Reveal>
         </div>
       </section>
@@ -105,21 +104,6 @@ const Media = () => {
                         <span style={{ color: 'var(--text-muted)', fontSize: '0.85rem' }}>{nl.issue}</span>
                       </div>
                       <a href="#" className="btn btn-outline" style={{ padding: '0.6rem 1.2rem', fontSize: '0.8rem' }}>Download PDF</a>
-                    </div>
-                  ))}
-                </motion.div>
-              )}
-
-              {activeTab === 'gallery' && (
-                <motion.div
-                  key="gallery"
-                  initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.95 }}
-                  transition={{ duration: 0.4 }}
-                  style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '1rem' }}
-                >
-                  {galleryPlaceholders.map((i) => (
-                    <div key={i} style={{ aspectRatio: '1', background: 'rgba(255,255,255,0.03)', border: '1px solid var(--border)', borderRadius: '8px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                      <Camera size={40} style={{ opacity: 0.1 }} />
                     </div>
                   ))}
                 </motion.div>
